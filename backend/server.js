@@ -21,6 +21,10 @@ app.get("/", (req, res) => {
     res.send("MERN Backend is running!");
 });
 
+app.get("/api/health", (req, res) => {
+    res.status(200).json({ status: "OK" });
+});
+
 app.get("/api/students", (req, res) => {
     res.json([
         {
@@ -36,7 +40,7 @@ app.get("/api/students", (req, res) => {
     ]);
 });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
