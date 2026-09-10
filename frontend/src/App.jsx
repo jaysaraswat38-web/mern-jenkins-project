@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/students")
+      .get("/api/students")
       .then((response) => {
         setStudents(response.data);
       })
